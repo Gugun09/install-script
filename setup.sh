@@ -10,7 +10,6 @@ fi
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-URL=$( curl https://url-script.herokuapp.com);
 MYIP=$(wget -qO- icanhazip.com);
 IZIN=$( curl https://queenssh.herokuapp.com/aksesku | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
