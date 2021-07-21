@@ -4,7 +4,7 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- icanhazip.com);
 echo -e "Checking VPS...${NC}"
-IZIN=$( curl https://quenssh.herokuapp.com/aksesku | grep $MYIP )
+IZIN=$( curl https://queenssh.herokuapp.com/aksesku | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
 else

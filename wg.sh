@@ -89,10 +89,10 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
-wget -O add-wg "https://quenssh.herokuapp.com/add-wg.sh"
-wget -O del-wg "https://quenssh.herokuapp.com/del-wg.sh"
-wget -O cek-wg "https://quenssh.herokuapp.com/cek-wg.sh"
-wget -O renew-wg "https://quenssh.herokuapp.com/renew-wg.sh"
+wget -O add-wg "https://queenssh.herokuapp.com/add-wg.sh"
+wget -O del-wg "https://queenssh.herokuapp.com/del-wg.sh"
+wget -O cek-wg "https://queenssh.herokuapp.com/cek-wg.sh"
+wget -O renew-wg "https://queenssh.herokuapp.com/renew-wg.sh"
 chmod +x add-wg
 chmod +x del-wg
 chmod +x cek-wg

@@ -18,11 +18,11 @@ exit 0
 fi
 echo "Start Update"
 cd /usr/bin
-wget -O menu "https://quenssh.herokuapp.com/menuu.sh"
-wget -O usernew "https://quenssh.herokuapp.com/usernew.sh"
-wget -O trial "https://quenssh.herokuapp.com/trial.sh"
-wget -O cek "https://quenssh.herokuapp.com/cek.sh"
-wget -O add-host "https://quenssh.herokuapp.com/add-host.sh"
+wget -O menu "https://queenssh.herokuapp.com/menuu.sh"
+wget -O usernew "https://queenssh.herokuapp.com/usernew.sh"
+wget -O trial "https://queenssh.herokuapp.com/trial.sh"
+wget -O cek "https://queenssh.herokuapp.com/cek.sh"
+wget -O add-host "https://queenssh.herokuapp.com/add-host.sh"
 chmod +x menu
 chmod +x usernew
 chmod +x trial

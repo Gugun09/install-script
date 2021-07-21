@@ -16,7 +16,7 @@ date
 mkdir -p /etc/trojan/
 touch /etc/trojan/akun.conf
 # install v2ray
-wget https://quenssh.herokuapp.com/go.sh && chmod +x go.sh && ./go.sh
+wget https://queenssh.herokuapp.com/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 mkdir /root/.acme.sh
@@ -491,19 +491,19 @@ systemctl enable trojan
 systemctl restart v2ray
 systemctl enable v2ray
 cd /usr/bin
-wget -O add-ws "https://quenssh.herokuapp.com/add-ws.sh"
-wget -O add-vless "https://quenssh.herokuapp.com/add-vless.sh"
-wget -O add-tr "https://quenssh.herokuapp.com/add-tr.sh"
-wget -O del-ws "https://quenssh.herokuapp.com/del-ws.sh"
-wget -O del-vless "https://quenssh.herokuapp.com/del-vless.sh"
-wget -O del-tr "https://quenssh.herokuapp.com/del-tr.sh"
-wget -O cek-ws "https://quenssh.herokuapp.com/cek-ws.sh"
-wget -O cek-vless "https://quenssh.herokuapp.com/cek-vless.sh"
-wget -O cek-tr "https://quenssh.herokuapp.com/cek-tr.sh"
-wget -O renew-ws "https://quenssh.herokuapp.com/renew-ws.sh"
-wget -O renew-vless "https://quenssh.herokuapp.com/renew-vless.sh"
-wget -O renew-tr "https://quenssh.herokuapp.com/renew-tr.sh"
-wget -O certv2ray "https://quenssh.herokuapp.com/cert.sh"
+wget -O add-ws "https://queenssh.herokuapp.com/add-ws.sh"
+wget -O add-vless "https://queenssh.herokuapp.com/add-vless.sh"
+wget -O add-tr "https://queenssh.herokuapp.com/add-tr.sh"
+wget -O del-ws "https://queenssh.herokuapp.com/del-ws.sh"
+wget -O del-vless "https://queenssh.herokuapp.com/del-vless.sh"
+wget -O del-tr "https://queenssh.herokuapp.com/del-tr.sh"
+wget -O cek-ws "https://queenssh.herokuapp.com/cek-ws.sh"
+wget -O cek-vless "https://queenssh.herokuapp.com/cek-vless.sh"
+wget -O cek-tr "https://queenssh.herokuapp.com/cek-tr.sh"
+wget -O renew-ws "https://queenssh.herokuapp.com/renew-ws.sh"
+wget -O renew-vless "https://queenssh.herokuapp.com/renew-vless.sh"
+wget -O renew-tr "https://queenssh.herokuapp.com/renew-tr.sh"
+wget -O certv2ray "https://queenssh.herokuapp.com/cert.sh"
 chmod +x add-ws
 chmod +x add-vless
 chmod +x add-tr

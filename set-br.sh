@@ -1,7 +1,7 @@
 #!/bin/bash
 curl https://rclone.org/install.sh | bash
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "https://quenssh.herokuapp.com/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "https://queenssh.herokuapp.com/rclone.conf"
 git clone  https://github.com/magnific0/wondershaper.git
 cd wondershaper
 make install
@@ -26,12 +26,12 @@ logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 cd /usr/bin
-wget -O autobackup "https://quenssh.herokuapp.com/autobackup.sh"
-wget -O backup "https://quenssh.herokuapp.com/backup.sh"
-wget -O bckp "https://quenssh.herokuapp.com/bckp.sh"
-wget -O restore "https://quenssh.herokuapp.com/restore.sh"
-wget -O strt "https://quenssh.herokuapp.com/strt.sh"
-wget -O limit-speed "https://quenssh.herokuapp.com/limit-speed.sh"
+wget -O autobackup "https://queenssh.herokuapp.com/autobackup.sh"
+wget -O backup "https://queenssh.herokuapp.com/backup.sh"
+wget -O bckp "https://queenssh.herokuapp.com/bckp.sh"
+wget -O restore "https://queenssh.herokuapp.com/restore.sh"
+wget -O strt "https://queenssh.herokuapp.com/strt.sh"
+wget -O limit-speed "https://queenssh.herokuapp.com/limit-speed.sh"
 chmod +x autobackup
 chmod +x backup
 chmod +x bckp

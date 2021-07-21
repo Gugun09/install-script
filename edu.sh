@@ -4,7 +4,7 @@
 # ==============================
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/edu-proxy https://quenssh.herokuapp.com/websocket.py
+wget -q -O /usr/local/bin/edu-proxy https://queenssh.herokuapp.com/websocket.py
 chmod +x /usr/local/bin/edu-proxy
 
 # Installing Service

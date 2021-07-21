@@ -88,10 +88,10 @@ iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2443:3543 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 ip6tables-save > /etc/ip6tables.up.rules
 cd /usr/bin
-wget -O add-ss "https://quenssh.herokuapp.com/add-ss.sh"
-wget -O del-ss "https://quenssh.herokuapp.com/del-ss.sh"
-wget -O cek-ss "https://quenssh.herokuapp.com/cek-ss.sh"
-wget -O renew-ss "https://quenssh.herokuapp.com/renew-ss.sh"
+wget -O add-ss "https://queenssh.herokuapp.com/add-ss.sh"
+wget -O del-ss "https://queenssh.herokuapp.com/del-ss.sh"
+wget -O cek-ss "https://queenssh.herokuapp.com/cek-ss.sh"
+wget -O renew-ss "https://queenssh.herokuapp.com/renew-ss.sh"
 chmod +x add-ss
 chmod +x del-ss
 chmod +x cek-ss
