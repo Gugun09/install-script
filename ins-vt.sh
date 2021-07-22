@@ -14,14 +14,11 @@ chronyc tracking -v
 date
 
 mkdir -p /etc/trojan/
-mkdir -p /etc/trojan-go/
 touch /etc/trojan/akun.conf
-touch /etc/trojan-go/akun.conf
 # install v2ray
 wget https://queenssh.herokuapp.com/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
-bash -c "$(wget -O- https://raw.githubusercontent.com/Gugun09/trojan-go/main/trojan-go.sh)"
 mkdir /root/.acme.sh
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
 chmod +x /root/.acme.sh/acme.sh
@@ -447,54 +444,6 @@ cat <<EOF > /etc/trojan/config.json
     }
 }
 EOF
-cat <<EOF> /etc/trojan-go/config.json
-{
-    "run_type": "server",
-    "local_addr": "::",
-    "local_port": 2085,
-    "remote_addr": "127.0.0.1",
-    "remote_port": 2604,
-    "password": [
-        "$uuid"
-    ],
-    "ssl": {
-        "cert": "/etc/v2ray/v2ray.crt",
-        "key": "/etc/v2ray/v2ray.key",
-        "sni": "${domain}",
-        "alpn": [
-            "http/1.1"
-        ],
-        "session_ticket": false,
-        "reuse_session": true,
-        "fallback_addr": "127.0.0.1",
-        "fallback_port": 2604
-    },
-    "tcp": {
-        "no_delay": true,
-        "keep_alive": true,
-        "prefer_ipv4": false
-    },
-    "mux": {
-        "enabled": false,
-        "concurrency": 8,
-        "idle_timeout": 60
-    },
-    "websocket": {
-        "enabled": true,
-        "path": "/queenssh",
-        "host": "${domain}"
-    },
-    "mysql": {
-      "enabled": false,
-      "server_addr": "localhost",
-      "server_port": 3306,
-      "database": "",
-      "username": "",
-      "password": "",
-      "check_rate": 60
-    }
-}
-EOF
 cat <<EOF> /etc/systemd/system/trojan.service
 [Unit]
 Description=Trojan
@@ -512,44 +461,19 @@ RestartSec=42s
 WantedBy=multi-user.target
 
 EOF
-cat <<EOF> /etc/systemd/system/trojan-go.service
-[Unit]
-Description=Trojan-Go - An unidentifiable mechanism that helps you bypass GFW
-Documentation=https://p4gefau1t.github.io/trojan-go/
-After=network.target nss-lookup.target
-
-[Service]
-User=nobody
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/usr/bin/trojan-go -config /etc/trojan-go/config.json
-Restart=on-failure
-RestartSec=10s
-LimitNOFILE=infinity
-
-[Install]
-WantedBy=multi-user.target
-
-EOF
 
 cat <<EOF > /etc/trojan/uuid.txt
-$uuid
-EOF
-cat <<EOF > /etc/trojan-go/uuid.txt
 $uuid
 EOF
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 4443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2085 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2082 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2087 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 4443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2085 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2082 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
@@ -564,8 +488,6 @@ systemctl enable v2ray@vnone.service
 systemctl start v2ray@vnone.service
 systemctl restart trojan
 systemctl enable trojan
-systemctl restart trojan
-systemctl enable trojan-go
 systemctl restart v2ray
 systemctl enable v2ray
 cd /usr/bin

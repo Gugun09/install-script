@@ -10,7 +10,6 @@ fi
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-URL=$( curl https://url-script.herokuapp.com);
 MYIP=$(wget -qO- icanhazip.com);
 IZIN=$( curl https://queenssh.herokuapp.com/aksesku | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
@@ -27,13 +26,13 @@ exit 0
 fi
 clear
 echo "!!!WARNING!!!"
-echo "Ketikkan perintah add-host setelah proses installasi Script Selesai"
+echo "Ketikkan perintah add-host setelah proses installasi Script Selesai" | lolcat
 sleep 5
 mkdir /var/lib/premium-script;
 echo "IP=" >> /var/lib/premium-script/ipvps.conf
-wget https://queenssh.herokuapp.com/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://queenssh.herokuapp.com/ssr.shcf.sh && chmod +x cf.sh && ./cf.sh
 #install ssh ovpn
-wget https://queenssh.herokuapp.com/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://queenssh.herokuapp.com/ssr.shssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 wget https://queenssh.herokuapp.com/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
 #install ssr
 wget https://queenssh.herokuapp.com/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
@@ -41,7 +40,7 @@ wget https://queenssh.herokuapp.com/sodosok.sh && chmod +x sodosok.sh && screen 
 #installwg
 wget https://queenssh.herokuapp.com/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install edu
-wget https://queenssh.herokuapp.com/edu.sh && chmod +x edu.sh && screen -S edu ./edu.sh
+wget https://queenssh.herokuapp.com/ssr.shedu.sh && chmod +x edu.sh && screen -S edu ./edu.sh
 #install v2ray
 wget https://queenssh.herokuapp.com/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
 #install L2TP

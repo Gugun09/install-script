@@ -20,7 +20,7 @@ domain=$(cat /etc/v2ray/domain)
 else
 domain=$IP
 fi
-tr-go="$(cat ~/log-install.txt | grep -i Trojan-go | cut -d: -f2|sed 's/ //g')"
+trgo="$(cat ~/log-install.txt | grep -i Trojan-go | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 		read -rp "Password: " -e user
 		user_EXISTS=$(grep -w $user /etc/trojan-go/akun.conf | wc -l)
@@ -36,13 +36,13 @@ sed -i '/"'""$uuid""'"$/a\,"'""$user""'"' /etc/trojan-go/config.json
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e "### $user $exp" >> /etc/trojan-go/akun.conf
 systemctl restart trojan-go
-trojanlink="trojan-go://${user}@${domain}:${tr-go}/?sni=${domain}&type=ws&host=${domain}&path=/queenssh"
+trojanlink="trojan-go://${user}@${domain}:${trgo}/?sni=${domain}&type=ws&host=${domain}&path=/queenssh"
 clear
 echo -e ""
 echo -e "=============-Trojan-============" | lolcat
 echo -e "Remarks        : ${user}" | lolcat
 echo -e "Host/IP        : ${domain}" | lolcat
-echo -e "port           : ${tr-go}" | lolcat
+echo -e "port           : ${trgo}" | lolcat
 echo -e "Key            : ${user}" | lolcat
 echo -e "link           : ${trojanlink}" | lolcat
 echo -e "=================================" | lolcat
