@@ -21,7 +21,7 @@ commonname=queenssh.me
 email=gugun@queenssh.me
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://queenssh.herokuapp.com/main/password"
+wget -O /etc/pam.d/common-password "https://queenssh.herokuapp.com/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -92,15 +92,15 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://queenssh.herokuapp.com/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://queenssh.herokuapp.com/nginx.conf"
 mkdir -p /home/vps/public_html
 echo "<pre>Setup by Gugun09</pre>" > /home/vps/public_html/index.html
-wget -O /etc/nginx/conf.d/vps.conf "https://queenssh.herokuapp.com/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://queenssh.herokuapp.com/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://queenssh.herokuapp.com/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://queenssh.herokuapp.com/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -136,7 +136,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://queenssh.herokuapp.com/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://queenssh.herokuapp.com/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -206,7 +206,7 @@ gem install lolcat
 apt install boxes
 
 #OpenVPN
-wget https://queenssh.herokuapp.com/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://queenssh.herokuapp.com/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -243,12 +243,12 @@ cd
 apt install -y libxml-parser-perl
 
 # banner /etc/issue.net
-wget -O /etc/issue.net "https://queenssh.herokuapp.com/main/issue.net"
+wget -O /etc/issue.net "https://queenssh.herokuapp.com/issue.net"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 #install bbr dan optimasi kernel
-wget https://queenssh.herokuapp.com/main/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://queenssh.herokuapp.com/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
@@ -269,36 +269,36 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O add-host "https://queenssh.herokuapp.com/main/add-host.sh"
-wget -O about "https://queenssh.herokuapp.com/main/about.sh"
-wget -O menu "https://queenssh.herokuapp.com/main/menuu.sh"
-wget -O usernew "https://queenssh.herokuapp.com/main/usernew.sh"
-wget -O trial "https://queenssh.herokuapp.com/main/trial.sh"
-wget -O hapus "https://queenssh.herokuapp.com/main/hapus.sh"
-wget -O member "https://queenssh.herokuapp.com/main/member.sh"
-wget -O delete "https://queenssh.herokuapp.com/main/delete.sh"
-wget -O cek "https://queenssh.herokuapp.com/main/cek.sh"
-wget -O restart "https://queenssh.herokuapp.com/main/restart.sh"
-wget -O speedtest "https://queenssh.herokuapp.com/main/speedtest_cli.py"
-wget -O info "https://queenssh.herokuapp.com/main/info.sh"
-wget -O ram "https://queenssh.herokuapp.com/main/ram.sh"
-wget -O renew "https://queenssh.herokuapp.com/main/renew.sh"
-wget -O autokill "https://queenssh.herokuapp.com/main/autokill.sh"
-wget -O ceklim "https://queenssh.herokuapp.com/main/ceklim.sh"
-wget -O tendang "https://queenssh.herokuapp.com/main/tendang.sh"
-wget -O clear-log "https://queenssh.herokuapp.com/main/clear-log.sh"
-wget -O change-port "https://queenssh.herokuapp.com/main/change.sh"
-wget -O port-ovpn "https://queenssh.herokuapp.com/main/port-ovpn.sh"
-wget -O port-ssl "https://queenssh.herokuapp.com/main/port-ssl.sh"
-wget -O port-wg "https://queenssh.herokuapp.com/main/port-wg.sh"
-wget -O port-tr "https://queenssh.herokuapp.com/main/port-tr.sh"
-wget -O port-sstp "https://queenssh.herokuapp.com/main/port-sstp.sh"
-wget -O port-squid "https://queenssh.herokuapp.com/main/port-squid.sh"
-wget -O port-ws "https://queenssh.herokuapp.com/main/port-ws.sh"
-wget -O port-vless "https://queenssh.herokuapp.com/main/port-vless.sh"
-wget -O wbmn "https://queenssh.herokuapp.com/main/webmin.sh"
-wget -O xp "https://queenssh.herokuapp.com/main/xp.sh"
-wget -O welcomeadmin "https://queenssh.herokuapp.com/main/welcomeadmin.sh"
+wget -O add-host "https://queenssh.herokuapp.com/add-host.sh"
+wget -O about "https://queenssh.herokuapp.com/about.sh"
+wget -O menu "https://queenssh.herokuapp.com/menuu.sh"
+wget -O usernew "https://queenssh.herokuapp.com/usernew.sh"
+wget -O trial "https://queenssh.herokuapp.com/trial.sh"
+wget -O hapus "https://queenssh.herokuapp.com/hapus.sh"
+wget -O member "https://queenssh.herokuapp.com/member.sh"
+wget -O delete "https://queenssh.herokuapp.com/delete.sh"
+wget -O cek "https://queenssh.herokuapp.com/cek.sh"
+wget -O restart "https://queenssh.herokuapp.com/restart.sh"
+wget -O speedtest "https://queenssh.herokuapp.com/speedtest_cli.py"
+wget -O info "https://queenssh.herokuapp.com/info.sh"
+wget -O ram "https://queenssh.herokuapp.com/ram.sh"
+wget -O renew "https://queenssh.herokuapp.com/renew.sh"
+wget -O autokill "https://queenssh.herokuapp.com/autokill.sh"
+wget -O ceklim "https://queenssh.herokuapp.com/ceklim.sh"
+wget -O tendang "https://queenssh.herokuapp.com/tendang.sh"
+wget -O clear-log "https://queenssh.herokuapp.com/clear-log.sh"
+wget -O change-port "https://queenssh.herokuapp.com/change.sh"
+wget -O port-ovpn "https://queenssh.herokuapp.com/port-ovpn.sh"
+wget -O port-ssl "https://queenssh.herokuapp.com/port-ssl.sh"
+wget -O port-wg "https://queenssh.herokuapp.com/port-wg.sh"
+wget -O port-tr "https://queenssh.herokuapp.com/port-tr.sh"
+wget -O port-sstp "https://queenssh.herokuapp.com/port-sstp.sh"
+wget -O port-squid "https://queenssh.herokuapp.com/port-squid.sh"
+wget -O port-ws "https://queenssh.herokuapp.com/port-ws.sh"
+wget -O port-vless "https://queenssh.herokuapp.com/port-vless.sh"
+wget -O wbmn "https://queenssh.herokuapp.com/webmin.sh"
+wget -O xp "https://queenssh.herokuapp.com/xp.sh"
+wget -O welcomeadmin "https://queenssh.herokuapp.com/welcomeadmin.sh"
 chmod +x add-host
 chmod +x menu
 chmod +x usernew
