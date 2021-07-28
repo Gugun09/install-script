@@ -5,7 +5,7 @@ NC='\e[0m'
 MYIP=$(wget -qO- icanhazip.com);
 NIC=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 echo "Checking VPS"
-IZIN=$( curl https://queenssh.herokuapp.com/aksesku | grep $MYIP )
+IZIN=$( wget -qO- icanhazip.com | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
 else

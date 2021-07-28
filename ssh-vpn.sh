@@ -207,6 +207,9 @@ apt install boxes
 
 #OpenVPN
 wget https://queenssh.herokuapp.com/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+cd /home/vps/public_html
+zip file_config.zip *.ovpn
+cd
 
 # install fail2ban
 apt -y install fail2ban

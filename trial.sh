@@ -4,7 +4,7 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- icanhazip.com);
 echo "Checking VPS"
-IZIN=$( curl https://queenssh.herokuapp.com/aksesku | grep $MYIP )
+IZIN=$( wget -qO- icanhazip.com | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
@@ -59,7 +59,7 @@ echo -e "===============================" | lolcat
 echo -e "OpenVPN        : TCP $ovpn http://$IP:81/client-tcp-$ovpn.ovpn" | lolcat
 echo -e "OpenVPN        : UDP $ovpn2 http://$IP:81/client-udp-$ovpn2.ovpn" | lolcat
 echo -e "OpenVPN        : SSL 442 http://$IP:81/client-tcp-ssl.ovpn" | lolcat
-echo -e "badvpn         : 7100-7400" | lolcat
+echo -e "badvpn         : 7100-7900" | lolcat
 echo -e "===============================" | lolcat
 echo -e "Aktif Sampai   : $exp" | lolcat
 
