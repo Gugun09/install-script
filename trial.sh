@@ -20,8 +20,6 @@ ssl="$(cat ~/log-install.txt | grep -w "Stunnel4" | cut -d: -f2)"
 sshws="$(cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2)"
 sslws="$(cat ~/log-install.txt | grep -w "SSL Websocket" | cut -d: -f2)"
 sqd="$(cat ~/log-install.txt | grep -w "Squid" | cut -d: -f2)"
-ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
-ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 hari="1"
 Pass=1
@@ -56,9 +54,7 @@ echo -e "===============================" | lolcat
 echo -e "Payload SSH Websocket" | lolcat
 echo -e "GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Upgrade: websocket[crlf][crlf]" | lolcat
 echo -e "===============================" | lolcat
-echo -e "OpenVPN        : TCP $ovpn http://$IP:81/client-tcp-$ovpn.ovpn" | lolcat
-echo -e "OpenVPN        : UDP $ovpn2 http://$IP:81/client-udp-$ovpn2.ovpn" | lolcat
-echo -e "OpenVPN        : SSL 442 http://$IP:81/client-tcp-ssl.ovpn" | lolcat
+echo -e "OpenVPN        : http://$IP:81/file_config.zip" | lolcat
 echo -e "badvpn         : 7100-7900" | lolcat
 echo -e "===============================" | lolcat
 echo -e "Aktif Sampai   : $exp" | lolcat

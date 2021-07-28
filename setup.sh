@@ -26,7 +26,7 @@ exit 0
 fi
 clear
 echo "!!!WARNING!!!"
-echo "Ketikkan perintah add-host setelah proses installasi Script Selesai" | lolcat
+echo "Ketikkan perintah add-host setelah proses installasi Script Selesai"
 sleep 5
 mkdir /var/lib/premium-script;
 echo "IP=" >> /var/lib/premium-script/ipvps.conf
