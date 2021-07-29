@@ -10,7 +10,7 @@ shc -r -f add-sstp.sh -o add.sstp.sh
 shc -r -f add-tr.sh -o add.tr.sh
 shc -r -f add-vless.sh -o add.vless.sh
 shc -r -f add-ws.sh -o add.ws.sh
-shc -r -f add.wg.sh -o add.wg.sh
+shc -r -f add-wg.sh -o add.wg.sh
 shc -r -f edu.sh -o edu.sh
 shc -r -f autobackup.sh -o autobackup.sh
 shc -r -f autokill.sh -o autokill.sh
