@@ -48,6 +48,10 @@ wget -O port-vless "https://queenssh.herokuapp.com/port-vless.sh"
 wget -O wbmn "https://queenssh.herokuapp.com/webmin.sh"
 wget -O xp "https://queenssh.herokuapp.com/xp.sh"
 wget -O welcomeadmin "https://queenssh.herokuapp.com/welcomeadmin.sh"
+wget -O /usr/bin/add-sstp https://queenssh.herokuapp.com/add-sstp.sh && chmod +x /usr/bin/add-sstp
+wget -O /usr/bin/del-sstp https://queenssh.herokuapp.com/del-sstp.sh && chmod +x /usr/bin/del-sstp
+wget -O /usr/bin/cek-sstp https://queenssh.herokuapp.com/cek-sstp.sh && chmod +x /usr/bin/cek-sstp
+wget -O /usr/bin/renew-sstp https://queenssh.herokuapp.com/renew-sstp.sh && chmod +x /usr/bin/renew-sstp
 chmod +x add-host
 chmod +x menu
 chmod +x usernew
