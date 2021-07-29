@@ -27,6 +27,7 @@ shc -r -f cert.sh -o cert.sh
 shc -r -f cf.sh -o cf.sh
 shc -r -f change.sh -o change.sh
 shc -r -f clear-log.sh -o clear-log.sh
+shc -r -f cert.sh -o cert.sh
 shc -r -f del-l2tp.sh -o del-l2tp.sh
 shc -r -f del-pptp.sh -o del-pptp.sh
 shc -r -f del-ss.sh -o del-ss.sh
@@ -64,7 +65,6 @@ shc -r -f renew-tr.sh -o renew-tr.sh
 shc -r -f renew-vless.sh -o renew-vless.sh
 shc -r -f renew-wg.sh -o renew-wg.sh
 shc -r -f renew-ws.sh -o renew-ws.sh
-shc -r -f ram.sh -o ram.sh
 shc -r -f renew.sh -o renew.sh
 shc -r -f restart.sh -o restart.sh
 shc -r -f restore.sh -o restore.sh
