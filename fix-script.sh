@@ -64,7 +64,6 @@ sed -i -e 's/\r$/\n/' renew-tr.sh
 sed -i -e 's/\r$/\n/' renew-vless.sh
 sed -i -e 's/\r$/\n/' renew-wg.sh
 sed -i -e 's/\r$/\n/' renew-ws.sh
-sed -i -e 's/\r$/\n/' ram.sh
 sed -i -e 's/\r$/\n/' renew.sh
 sed -i -e 's/\r$/\n/' restart.sh
 sed -i -e 's/\r$/\n/' restore.sh
@@ -80,7 +79,6 @@ sed -i -e 's/\r$/\n/' strt.sh
 sed -i -e 's/\r$/\n/' swapkvm.sh
 sed -i -e 's/\r$/\n/' tendang.sh
 sed -i -e 's/\r$/\n/' trial.sh
-sed -i -e 's/\r$/\n/' update-1.2.sh
 sed -i -e 's/\r$/\n/' usernew.sh
 sed -i -e 's/\r$/\n/' vpn.sh
 sed -i -e 's/\r$/\n/' welcomeadmin.sh
