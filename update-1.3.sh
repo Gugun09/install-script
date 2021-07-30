@@ -48,10 +48,10 @@ wget -O port-vless "https://queenssh.herokuapp.com/port-vless.sh"
 wget -O wbmn "https://queenssh.herokuapp.com/webmin.sh"
 wget -O xp "https://queenssh.herokuapp.com/xp.sh"
 wget -O welcomeadmin "https://queenssh.herokuapp.com/welcomeadmin.sh"
-wget -O /usr/bin/add-sstp https://queenssh.herokuapp.com/add-sstp.sh && chmod +x /usr/bin/add-sstp
-wget -O /usr/bin/del-sstp https://queenssh.herokuapp.com/del-sstp.sh && chmod +x /usr/bin/del-sstp
-wget -O /usr/bin/cek-sstp https://queenssh.herokuapp.com/cek-sstp.sh && chmod +x /usr/bin/cek-sstp
-wget -O /usr/bin/renew-sstp https://queenssh.herokuapp.com/renew-sstp.sh && chmod +x /usr/bin/renew-sstp
+wget -O add-sstp "https://queenssh.herokuapp.com/add-sstp.sh"
+wget -O del-sstp "https://queenssh.herokuapp.com/del-sstp.sh"
+wget -O cek-sstp "https://queenssh.herokuapp.com/cek-sstp.sh"
+wget -O renew-sstp "https://queenssh.herokuapp.com/renew-sstp.sh"
 wget -O add-wg "https://queenssh.herokuapp.com/add-wg.sh"
 wget -O del-wg "https://queenssh.herokuapp.com/del-wg.sh"
 wget -O cek-wg "https://queenssh.herokuapp.com/cek-wg.sh"
@@ -60,9 +60,9 @@ wget -O add-ss "https://queenssh.herokuapp.com/add-ss.sh"
 wget -O del-ss "https://queenssh.herokuapp.com/del-ss.sh"
 wget -O cek-ss "https://queenssh.herokuapp.com/cek-ss.sh"
 wget -O renew-ss "https://queenssh.herokuapp.com/renew-ss.sh"
-wget -O /usr/bin/add-ssr https://queenssh.herokuapp.com/add-ssr.sh && chmod +x /usr/bin/add-ssr
-wget -O /usr/bin/del-ssr https://queenssh.herokuapp.com/del-ssr.sh && chmod +x /usr/bin/del-ssr
-wget -O /usr/bin/renew-ssr https://queenssh.herokuapp.com/renew-ssr.sh && chmod +x /usr/bin/renew-ssr
+wget -O add-ssr "https://queenssh.herokuapp.com/add-ssr.sh"
+wget -O del-ssr "https://queenssh.herokuapp.com/del-ssr.sh"
+wget -O renew-ssr "https://queenssh.herokuapp.com/renew-ssr.sh"
 wget -O add-ws "https://queenssh.herokuapp.com/add-ws.sh"
 wget -O add-vless "https://queenssh.herokuapp.com/add-vless.sh"
 wget -O add-tr "https://queenssh.herokuapp.com/add-tr.sh"
@@ -75,18 +75,12 @@ wget -O cek-tr "https://queenssh.herokuapp.com/cek-tr.sh"
 wget -O renew-ws "https://queenssh.herokuapp.com/renew-ws.sh"
 wget -O renew-vless "https://queenssh.herokuapp.com/renew-vless.sh"
 wget -O renew-tr "https://queenssh.herokuapp.com/renew-tr.sh"
-#wget -O xp-ws "https://queenssh.herokuapp.com/xp-ws.sh"
-#wget -O xp-tr "https://queenssh.herokuapp.com/xp-tr.sh"
-#wget -O xp-vless "https://queenssh.herokuapp.com/xp-vless.sh"
-#wget -O certv2ray "https://queenssh.herokuapp.com/cert.sh"
-wget -O /usr/bin/add-l2tp https://queenssh.herokuapp.com/add-l2tp.sh && chmod +x /usr/bin/add-l2tp
-wget -O /usr/bin/del-l2tp https://queenssh.herokuapp.com/del-l2tp.sh && chmod +x /usr/bin/del-l2tp
-#wget -O /usr/bin/xp-l2tp https://queenssh.herokuapp.com/xp-l2tp.sh && chmod +x /usr/bin/xp-l2tp
-wget -O /usr/bin/add-pptp https://queenssh.herokuapp.com/add-pptp.sh && chmod +x /usr/bin/add-pptp
-wget -O /usr/bin/del-pptp https://queenssh.herokuapp.com/del-pptp.sh && chmod +x /usr/bin/del-pptp
-#wget -O /usr/bin/xp-pptp https://queenssh.herokuapp.com/xp-pptp.sh && chmod +x /usr/bin/xp-pptp
-wget -O /usr/bin/renew-pptp https://queenssh.herokuapp.com/renew-pptp.sh && chmod +x /usr/bin/renew-pptp
-wget -O /usr/bin/renew-l2tp https://queenssh.herokuapp.com/renew-l2tp.sh && chmod +x /usr/bin/renew-l2tp
+wget -O add-l2tp "https://queenssh.herokuapp.com/add-l2tp.sh"
+wget -O del-l2tp "https://queenssh.herokuapp.com/del-l2tp.sh"
+wget -O add-pptp "https://queenssh.herokuapp.com/add-pptp.sh"
+wget -O del-pptp "https://queenssh.herokuapp.com/del-pptp.sh"
+wget -O renew-pptp "https://queenssh.herokuapp.com/renew-pptp.sh"
+wget -O renew-l2tp "https://queenssh.herokuapp.com/renew-l2tp.sh"
 chmod +x add-ws
 chmod +x add-vless
 chmod +x add-tr
@@ -99,6 +93,19 @@ chmod +x cek-tr
 chmod +x renew-ws
 chmod +x renew-tr
 chmod +x renew-vless
+chmod +x add-sstp
+chmod +x del-sstp
+chmod +x cek-sstp
+chmod +x renew-sstp
+chmod +x add-ssr
+chmod +x del-ssr
+chmod +x renew-ssr
+chmod +x add-l2tp
+chmod +x del-l2tp
+chmod +x add-pptp
+chmod +x del-pptp
+chmod +x renew-pptp
+chmod +x renew-l2tp
 #chmod +x xp-ws
 #chmod +x xp-tr
 #chmod +x xp-vless
@@ -144,7 +151,6 @@ chmod +x xp
 chmod +x welcomeadmin
 echo "0 0 * * * root clear-log && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
-echo "0 0 * * * root delete" >> /etc/crontab
 cd
 echo "1.3" > /home/ver
 clear
